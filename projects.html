@@ -199,8 +199,135 @@
       <button class="project-filter-btn btn-ripple px-3 py-1.5 rounded-xl text-xs font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white transition-all" data-category="web-tool">Web Tools</button>
     </div>
 
-    <!-- Projects Grid — injected by JS, cards already get reveal + card-lift from renderAllProjects() -->
-    <div id="all-projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <!-- Projects Grid — static HTML for SEO & performance -->
+    <div id="all-projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- MetaTagLens -->
+      <article class="card-lift group flex flex-col justify-between bg-white dark:bg-[#141417] rounded-3xl border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 shadow-2xs overflow-hidden" data-category="seo-utility">
+        <div class="img-zoom relative aspect-video overflow-hidden bg-stone-100 dark:bg-stone-900">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="MetaTagLens — OpenGraph & SERP Visualizer" class="w-full h-full object-cover" loading="lazy" />
+          <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-white/90 dark:bg-black/80 text-stone-800 dark:text-stone-200">SEO Utility</span>
+          <span class="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/90 text-white">Live</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <h2 class="font-bold text-base text-stone-900 dark:text-stone-100 group-hover:text-emerald-600 transition-colors">MetaTagLens</h2>
+            <p class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium mt-0.5">Instant OpenGraph & SERP Social Snippet Visualizer</p>
+            <p class="text-xs text-stone-600 dark:text-stone-300 mt-2 leading-relaxed">A developer & SEO utility that fetches live meta tags, OpenGraph images, and Twitter Cards to preview how URLs look on Google, X, Facebook, and LinkedIn.</p>
+            <div class="p-2.5 rounded-xl bg-stone-50 dark:bg-stone-900 text-[11px] text-stone-600 dark:text-stone-400 mt-3">
+              <strong class="text-stone-800 dark:text-stone-200">Problem Solved:</strong> Eliminates guesswork before publishing by showing instant pixel-accurate SERP previews and OpenGraph rendering warnings.
+            </div>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">TypeScript</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Vite</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Tailwind CSS</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">DOMParser</span>
+            </div>
+          </div>
+          <div class="pt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-[10px] font-mono text-stone-400">2026</span>
+            <div class="flex gap-2">
+              <a href="https://github.com/romityadav" target="_blank" rel="noopener noreferrer" class="btn-ripple px-3 py-1.5 rounded-xl border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 text-xs font-semibold hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors">GitHub</a>
+              <a href="https://github.com/romityadav" target="_blank" rel="noopener noreferrer" class="btn-ripple px-3 py-1.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-xs font-semibold">Live Project</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CleanSlug Engine -->
+      <article class="card-lift group flex flex-col justify-between bg-white dark:bg-[#141417] rounded-3xl border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 shadow-2xs overflow-hidden" data-category="developer-tool">
+        <div class="img-zoom relative aspect-video overflow-hidden bg-stone-100 dark:bg-stone-900">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80" alt="CleanSlug Engine — URL Slugifier" class="w-full h-full object-cover" loading="lazy" />
+          <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-white/90 dark:bg-black/80 text-stone-800 dark:text-stone-200">Developer Tool</span>
+          <span class="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/90 text-white">Live</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <h2 class="font-bold text-base text-stone-900 dark:text-stone-100 group-hover:text-emerald-600 transition-colors">CleanSlug Engine</h2>
+            <p class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium mt-0.5">Internationalized Unicode-Safe URL Slugifier</p>
+            <p class="text-xs text-stone-600 dark:text-stone-300 mt-2 leading-relaxed">A lightning-fast client-side string slugifier supporting multi-language transliteration, stopword filtering, and canonical URL structure validation.</p>
+            <div class="p-2.5 rounded-xl bg-stone-50 dark:bg-stone-900 text-[11px] text-stone-600 dark:text-stone-400 mt-3">
+              <strong class="text-stone-800 dark:text-stone-200">Problem Solved:</strong> Stops messy special characters and accents from breaking CMS permalinks and creates clean, keyword-dense URLs for SEO.
+            </div>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">JavaScript</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Web Workers</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">RegEx</span>
+            </div>
+          </div>
+          <div class="pt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-[10px] font-mono text-stone-400">2026</span>
+            <div class="flex gap-2">
+              <a href="https://github.com/romityadav" target="_blank" rel="noopener noreferrer" class="btn-ripple px-3 py-1.5 rounded-xl border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 text-xs font-semibold hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors">GitHub</a>
+              <a href="https://github.com/romityadav" target="_blank" rel="noopener noreferrer" class="btn-ripple px-3 py-1.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-xs font-semibold">Live Project</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- VectorPath Mini -->
+      <article class="card-lift group flex flex-col justify-between bg-white dark:bg-[#141417] rounded-3xl border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 shadow-2xs overflow-hidden" data-category="web-tool">
+        <div class="img-zoom relative aspect-video overflow-hidden bg-stone-100 dark:bg-stone-900">
+          <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80" alt="VectorPath Mini — SVG Optimizer" class="w-full h-full object-cover" loading="lazy" />
+          <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-white/90 dark:bg-black/80 text-stone-800 dark:text-stone-200">Web Tool</span>
+          <span class="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/90 text-white">Live</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <h2 class="font-bold text-base text-stone-900 dark:text-stone-100 group-hover:text-emerald-600 transition-colors">VectorPath Mini</h2>
+            <p class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium mt-0.5">In-Browser SVG Path Optimizer & Minifier</p>
+            <p class="text-xs text-stone-600 dark:text-stone-300 mt-2 leading-relaxed">A lightweight canvas-powered tool to strip unnecessary vector precision decimals, convert absolute coordinates to relative, and shave 40%+ off SVG file weights.</p>
+            <div class="p-2.5 rounded-xl bg-stone-50 dark:bg-stone-900 text-[11px] text-stone-600 dark:text-stone-400 mt-3">
+              <strong class="text-stone-800 dark:text-stone-200">Problem Solved:</strong> Shrinks asset bundle payloads for modern frontend apps without needing heavy Node build pipelines.
+            </div>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">TypeScript</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Canvas API</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Tailwind</span>
+            </div>
+          </div>
+          <div class="pt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-[10px] font-mono text-stone-400">2025</span>
+            <div class="flex gap-2">
+              <a href="https://github.com/romityadav" target="_blank" rel="noopener noreferrer" class="btn-ripple px-3 py-1.5 rounded-xl border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 text-xs font-semibold hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors">GitHub</a>
+              <a href="https://github.com/romityadav" target="_blank" rel="noopener noreferrer" class="btn-ripple px-3 py-1.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-xs font-semibold">Live Project</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ContrastRatio Lab -->
+      <article class="card-lift group flex flex-col justify-between bg-white dark:bg-[#141417] rounded-3xl border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 shadow-2xs overflow-hidden" data-category="developer-tool">
+        <div class="img-zoom relative aspect-video overflow-hidden bg-stone-100 dark:bg-stone-900">
+          <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&auto=format&fit=crop&q=80" alt="ContrastRatio Lab — WCAG Contrast Validator" class="w-full h-full object-cover" loading="lazy" />
+          <span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-white/90 dark:bg-black/80 text-stone-800 dark:text-stone-200">Developer Tool</span>
+          <span class="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/90 text-white">Live</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <h2 class="font-bold text-base text-stone-900 dark:text-stone-100 group-hover:text-emerald-600 transition-colors">ContrastRatio Lab</h2>
+            <p class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium mt-0.5">WCAG AA/AAA Color Palette & Contrast Validator</p>
+            <p class="text-xs text-stone-600 dark:text-stone-300 mt-2 leading-relaxed">An interactive color analyzer that verifies foreground and background combinations against WCAG 2.1 standards in real time.</p>
+            <div class="p-2.5 rounded-xl bg-stone-50 dark:bg-stone-900 text-[11px] text-stone-600 dark:text-stone-400 mt-3">
+              <strong class="text-stone-800 dark:text-stone-200">Problem Solved:</strong> Prevents hard-to-read websites and guarantees accessibility compliance across light and dark modes.
+            </div>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">TypeScript</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Chroma.js</span>
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">CSS Variables</span>
+            </div>
+          </div>
+          <div class="pt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+            <span class="text-[10px] font-mono text-stone-400">2025</span>
+            <div class="flex gap-2">
+              <a href="https://github.com/romityadav" target="_blank" rel="noopener noreferrer" class="btn-ripple px-3 py-1.5 rounded-xl border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 text-xs font-semibold hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors">GitHub</a>
+              <a href="https://github.com/romityadav" target="_blank" rel="noopener noreferrer" class="btn-ripple px-3 py-1.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 text-xs font-semibold">Live Project</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
 
   </main>
 

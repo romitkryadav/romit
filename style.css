@@ -399,3 +399,19 @@ footer {
   opacity: 0;
   animation: heroFadeUp 0.6s ease 0.3s forwards;
 }
+
+/* ==========================================================================
+   Static Grid Override
+   Ensure static HTML grids are ALWAYS visible — never hidden by reveal/stagger
+   ========================================================================== */
+
+#all-experiences-grid,
+#all-experiences-grid > *,
+#all-projects-grid,
+#all-projects-grid > *,
+#gallery-grid,
+#gallery-grid > * {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}

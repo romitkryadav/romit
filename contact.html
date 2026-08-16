@@ -214,34 +214,52 @@
       <div class="lg:col-span-7">
         <div class="reveal card-lift p-6 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] shadow-2xs space-y-4">
           <h2 class="text-lg font-bold text-stone-900 dark:text-stone-100">Send a Note</h2>
-          <form id="contact-form" class="space-y-4 text-xs">
+          <form
+            id="contact-form"
+            action="https://formsubmit.co/ajax/romitkryadav@proton.me"
+            method="POST"
+            class="space-y-4 text-xs"
+          >
+            <input type="hidden" name="_subject"  value="New message from your website — Romit.dev" />
+            <input type="hidden" name="_captcha"  value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <!-- Honeypot -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div class="space-y-1">
-                <label class="font-semibold text-stone-700 dark:text-stone-300">Your Name *</label>
-                <input type="text" id="form-name" required placeholder="Alex Rivera"
+                <label for="form-name" class="font-semibold text-stone-700 dark:text-stone-300">Your Name *</label>
+                <input type="text" id="form-name" name="name" required placeholder="Alex Rivera"
                   class="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 transition-all" />
               </div>
               <div class="space-y-1">
-                <label class="font-semibold text-stone-700 dark:text-stone-300">Your Email *</label>
-                <input type="email" id="form-email" required placeholder="alex@domain.com"
+                <label for="form-email" class="font-semibold text-stone-700 dark:text-stone-300">Your Email *</label>
+                <input type="email" id="form-email" name="email" required placeholder="alex@domain.com"
                   class="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 transition-all" />
               </div>
             </div>
             <div class="space-y-1">
-              <label class="font-semibold text-stone-700 dark:text-stone-300">Subject</label>
-              <input type="text" id="form-subject" placeholder="Question regarding SEO tool / collaboration"
+              <label for="form-subject" class="font-semibold text-stone-700 dark:text-stone-300">Subject</label>
+              <input type="text" id="form-subject" name="subject" placeholder="Question regarding SEO tool / collaboration"
                 class="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 transition-all" />
             </div>
             <div class="space-y-1">
-              <label class="font-semibold text-stone-700 dark:text-stone-300">Message *</label>
-              <textarea id="form-message" rows="5" required placeholder="Hi Romit, I saw your web utilities..."
+              <label for="form-message" class="font-semibold text-stone-700 dark:text-stone-300">Message *</label>
+              <textarea id="form-message" name="message" rows="5" required placeholder="Hi Romit, I saw your web utilities..."
                 class="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 transition-all resize-none"></textarea>
             </div>
-            <button type="submit" class="btn-ripple w-full py-3 rounded-xl bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 font-semibold text-xs hover:opacity-90 transition-opacity">
-              Send Message
+            <button type="submit" id="form-submit-btn" class="btn-ripple w-full py-3 rounded-xl bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 font-semibold text-xs hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+              <span id="form-btn-text">Send Message</span>
+              <svg id="form-spinner" class="hidden w-3.5 h-3.5 animate-spin" viewBox="0 0 24 24" fill="none">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+              </svg>
             </button>
             <p id="form-success-msg" class="hidden text-center text-xs font-semibold text-emerald-600 dark:text-emerald-400 py-1">
-              ✓ Message sent successfully! Thanks for reaching out.
+              ✓ Message sent! I'll get back to you within 24–48 hours.
+            </p>
+            <p id="form-error-msg" class="hidden text-center text-xs font-semibold text-red-500 dark:text-red-400 py-1">
+              Something went wrong. Please try emailing directly.
             </p>
           </form>
         </div>

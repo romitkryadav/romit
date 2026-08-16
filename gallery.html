@@ -178,8 +178,61 @@
       </p>
     </div>
 
-    <!-- Gallery Grid — injected by JS, cards get reveal + card-lift from renderGallery() -->
-    <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <!-- Gallery Grid — static HTML for SEO & performance -->
+    <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Minimal Desk Setup -->
+      <figure class="card-lift group relative rounded-3xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] overflow-hidden shadow-2xs">
+        <div class="img-zoom aspect-[4/3] overflow-hidden bg-stone-100 dark:bg-stone-900">
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80"
+            alt="Romit Yadav minimal coding desk setup with mechanical keyboard and warm ambient light"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <figcaption class="p-4 space-y-1">
+          <h2 class="font-bold text-xs text-stone-900 dark:text-stone-100">Minimal Desk Setup</h2>
+          <p class="text-[11px] text-stone-500 dark:text-stone-400">My coding workstation with split mechanical keyboard and warm ambient backlight.</p>
+          <time class="text-[10px] font-mono text-stone-400 block pt-1" datetime="2026-08">August 2026</time>
+        </figcaption>
+      </figure>
+
+      <!-- Morning Green Tea & Wireframes -->
+      <figure class="card-lift group relative rounded-3xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] overflow-hidden shadow-2xs">
+        <div class="img-zoom aspect-[4/3] overflow-hidden bg-stone-100 dark:bg-stone-900">
+          <img
+            src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&auto=format&fit=crop&q=80"
+            alt="Morning green tea beside hand-drawn wireframe sketches for a new web tool"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <figcaption class="p-4 space-y-1">
+          <h2 class="font-bold text-xs text-stone-900 dark:text-stone-100">Morning Green Tea & Wireframes</h2>
+          <p class="text-[11px] text-stone-500 dark:text-stone-400">Sketching out user flows for a new metadata tool over a fresh brew.</p>
+          <time class="text-[10px] font-mono text-stone-400 block pt-1" datetime="2026-07">July 2026</time>
+        </figcaption>
+      </figure>
+
+      <!-- Weekend Mountain Escape -->
+      <figure class="card-lift group relative rounded-3xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] overflow-hidden shadow-2xs">
+        <div class="img-zoom aspect-[4/3] overflow-hidden bg-stone-100 dark:bg-stone-900">
+          <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80"
+            alt="Mountain hiking trail during a weekend escape to recharge away from screens"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <figcaption class="p-4 space-y-1">
+          <h2 class="font-bold text-xs text-stone-900 dark:text-stone-100">Weekend Mountain Escape</h2>
+          <p class="text-[11px] text-stone-500 dark:text-stone-400">Stepping away from screens to recharge on mountain hiking trails.</p>
+          <time class="text-[10px] font-mono text-stone-400 block pt-1" datetime="2026-06">June 2026</time>
+        </figcaption>
+      </figure>
+
+    </div>
 
   </main>
 

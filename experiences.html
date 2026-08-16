@@ -183,24 +183,170 @@
   </header>
 
   <!-- Main Content -->
-  <main class="page-view flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 pt-6 pb-16 space-y-8">
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 pt-6 pb-16 space-y-8">
 
     <!-- Page Header -->
-    <div class="space-y-4">
-      <div class="hero-line inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs font-semibold">
+    <div class="space-y-4 animate-[fadeIn_0.4s_ease_forwards]">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs font-semibold">
         <i data-lucide="book-open" class="w-3.5 h-3.5 text-emerald-500"></i>
         <span>Journal & Public Notes</span>
       </div>
-      <h1 class="hero-line text-3xl sm:text-4xl font-extrabold tracking-tight text-stone-900 dark:text-stone-100">
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-stone-900 dark:text-stone-100">
         Experiences, Experiments & Lessons
       </h1>
-      <p class="hero-line text-base text-stone-600 dark:text-stone-300 max-w-2xl leading-relaxed">
+      <p class="text-base text-stone-600 dark:text-stone-300 max-w-2xl leading-relaxed">
         My personal space for publishing what I'm learning, documenting technical SEO discoveries, analyzing failures, and celebrating builder milestones.
       </p>
     </div>
 
-    <!-- Experiences Grid — injected by JS, cards get reveal + card-lift from renderExperiences() -->
-    <div id="all-experiences-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <!-- Experiences Grid — static HTML for SEO -->
+    <div id="all-experiences-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Article 1 -->
+      <article onclick="openEntry('entry-1')" id="why-my-first-three-tools-failed" class="card-lift group flex flex-col justify-between p-6 rounded-3xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] hover:border-stone-300 dark:hover:border-stone-700 shadow-2xs transition-all cursor-pointer">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between text-[11px] text-stone-400">
+            <span class="font-semibold text-emerald-600 dark:text-emerald-400">Failures & Lessons</span>
+            <span>Aug 10, 2026 · 4 min read</span>
+          </div>
+          <h2 class="font-bold text-base text-stone-900 dark:text-stone-100 group-hover:text-emerald-600 transition-colors leading-snug">
+            Why My First 3 Micro-Tools Got Zero Users (And What I Changed)
+          </h2>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed line-clamp-3">
+            Building in a vacuum vs solving sharp pain points. A candid breakdown of why clean code is meaningless if nobody actually searches for the problem.
+          </p>
+          <ul class="text-[11px] text-stone-500 dark:text-stone-400 space-y-1 pt-1">
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 mt-0.5">›</span> Validate search query intent before writing a single line of code.</li>
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 mt-0.5">›</span> Focus on high-frequency friction, not one-time tasks.</li>
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 mt-0.5">›</span> SEO architecture defines product design — not an afterthought.</li>
+          </ul>
+        </div>
+        <div class="pt-4 mt-4 border-t border-stone-100 dark:border-stone-800 flex justify-between items-center text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+          <span>Read Full Entry</span>
+          <span>→</span>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article onclick="openEntry('entry-2')" id="demystifying-json-ld-structured-data" class="card-lift group flex flex-col justify-between p-6 rounded-3xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] hover:border-stone-300 dark:hover:border-stone-700 shadow-2xs transition-all cursor-pointer">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between text-[11px] text-stone-400">
+            <span class="font-semibold text-emerald-600 dark:text-emerald-400">SEO & Search</span>
+            <span>Jul 28, 2026 · 6 min read</span>
+          </div>
+          <h2 class="font-bold text-base text-stone-900 dark:text-stone-100 group-hover:text-emerald-600 transition-colors leading-snug">
+            Demystifying JSON-LD: How Clean Schema Transformed My Search CTR
+          </h2>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed line-clamp-3">
+            Deep-dive into nested schema types, software application markup, and rich snippets that help Google understand your web pages unambiguously.
+          </p>
+          <ul class="text-[11px] text-stone-500 dark:text-stone-400 space-y-1 pt-1">
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 mt-0.5">›</span> Always validate schemas with Google Rich Results Test.</li>
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 mt-0.5">›</span> Explicitly declare operatingSystem and applicationCategory for software.</li>
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 mt-0.5">›</span> Connect Person and WebSite nodes with sameAs social vectors.</li>
+          </ul>
+        </div>
+        <div class="pt-4 mt-4 border-t border-stone-100 dark:border-stone-800 flex justify-between items-center text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+          <span>Read Full Entry</span>
+          <span>→</span>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article onclick="openEntry('entry-3')" id="zero-bloat-static-deployments" class="card-lift group flex flex-col justify-between p-6 rounded-3xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] hover:border-stone-300 dark:hover:border-stone-700 shadow-2xs transition-all cursor-pointer">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between text-[11px] text-stone-400">
+            <span class="font-semibold text-emerald-600 dark:text-emerald-400">Building & Coding</span>
+            <span>Jul 14, 2026 · 5 min read</span>
+          </div>
+          <h2 class="font-bold text-base text-stone-900 dark:text-stone-100 group-hover:text-emerald-600 transition-colors leading-snug">
+            Shipping 100/100 Lighthouse Static Sites on Cloudflare Edge
+          </h2>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed line-clamp-3">
+            Achieving sub-100ms First Contentful Paint by removing runtime client overhead, inlining critical fonts, and leveraging edge caching.
+          </p>
+          <ul class="text-[11px] text-stone-500 dark:text-stone-400 space-y-1 pt-1">
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 mt-0.5">›</span> Eliminate heavy dependencies when standard browser APIs suffice.</li>
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 mt-0.5">›</span> Use immutable cache-control headers for fingerprinted assets.</li>
+            <li class="flex items-start gap-1.5"><span class="text-emerald-500 mt-0.5">›</span> Pre-render static HTML so users never wait on client JS rendering.</li>
+          </ul>
+        </div>
+        <div class="pt-4 mt-4 border-t border-stone-100 dark:border-stone-800 flex justify-between items-center text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+          <span>Read Full Entry</span>
+          <span>→</span>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Hidden article data for modal -->
+    <template id="entry-1">
+      <div class="space-y-2 border-b border-stone-200 dark:border-stone-800 pb-5">
+        <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">Failures & Lessons · Aug 10, 2026</span>
+        <h1 class="text-2xl font-bold text-stone-900 dark:text-stone-100 leading-snug">Why My First 3 Micro-Tools Got Zero Users (And What I Changed)</h1>
+        <p class="italic text-stone-500 dark:text-stone-400 font-serif text-sm">"Building in a vacuum vs solving sharp pain points."</p>
+      </div>
+      <div class="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 space-y-2">
+        <p class="text-xs font-bold text-amber-900 dark:text-amber-200">Key Takeaways</p>
+        <ul class="text-xs text-amber-800 dark:text-amber-300 space-y-1.5 list-disc list-inside">
+          <li>Validate search query intent before writing a single line of React code.</li>
+          <li>A utility that saves 5 seconds once a month has low retention — focus on high-frequency friction.</li>
+          <li>Distribution and SEO architecture are not afterthoughts — they define product design.</li>
+        </ul>
+      </div>
+      <div class="text-sm text-stone-700 dark:text-stone-300 leading-relaxed space-y-4">
+        <p>When I built my first three utilities, I spent weeks tweaking animations and perfecting state trees. But after launching, total visitors numbered in the single digits.</p>
+        <p>Here is what went wrong:</p>
+        <ol class="list-decimal list-inside space-y-2 pl-2">
+          <li>I built features I found fun, rather than utilities people were actively Googling for.</li>
+          <li>I neglected basic keyword research and programmatic page titles.</li>
+          <li>I didn't provide immediate value without requiring signups.</li>
+        </ol>
+        <p>After refactoring my mindset towards technical SEO and immediate utility value, my tools started finding organic traction. The lesson: validate demand first, build second.</p>
+      </div>
+    </template>
+
+    <template id="entry-2">
+      <div class="space-y-2 border-b border-stone-200 dark:border-stone-800 pb-5">
+        <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">SEO & Search · Jul 28, 2026</span>
+        <h1 class="text-2xl font-bold text-stone-900 dark:text-stone-100 leading-snug">Demystifying JSON-LD: How Clean Schema Transformed My Search CTR</h1>
+        <p class="italic text-stone-500 dark:text-stone-400 font-serif text-sm">"Rich snippets aren't magic — they're structured communication."</p>
+      </div>
+      <div class="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 space-y-2">
+        <p class="text-xs font-bold text-amber-900 dark:text-amber-200">Key Takeaways</p>
+        <ul class="text-xs text-amber-800 dark:text-amber-300 space-y-1.5 list-disc list-inside">
+          <li>Always validate schemas with Google Rich Results Test.</li>
+          <li>Explicitly declare operatingSystem, applicationCategory, and offers for software.</li>
+          <li>Connect Person and WebSite nodes with clear sameAs social vectors.</li>
+        </ul>
+      </div>
+      <div class="text-sm text-stone-700 dark:text-stone-300 leading-relaxed space-y-4">
+        <p>Structured data acts as direct semantic context for search engine crawlers. Before implementing JSON-LD, my tools ranked for generic terms with no rich result enhancements.</p>
+        <p>By providing well-structured JSON-LD graphs — linking Person, WebSite, SoftwareApplication, and BreadcrumbList nodes — search engines generated rich result cards with review badges and software tags.</p>
+        <p>The result was a measurable boost in click-through rates, especially on mobile SERPs where rich cards dominate the visible area. The key insight: don't just add schema, build a connected graph.</p>
+      </div>
+    </template>
+
+    <template id="entry-3">
+      <div class="space-y-2 border-b border-stone-200 dark:border-stone-800 pb-5">
+        <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">Building & Coding · Jul 14, 2026</span>
+        <h1 class="text-2xl font-bold text-stone-900 dark:text-stone-100 leading-snug">Shipping 100/100 Lighthouse Static Sites on Cloudflare Edge</h1>
+        <p class="italic text-stone-500 dark:text-stone-400 font-serif text-sm">"Speed is a feature, not an optimization."</p>
+      </div>
+      <div class="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 space-y-2">
+        <p class="text-xs font-bold text-amber-900 dark:text-amber-200">Key Takeaways</p>
+        <ul class="text-xs text-amber-800 dark:text-amber-300 space-y-1.5 list-disc list-inside">
+          <li>Eliminate heavy dependencies when standard browser APIs suffice.</li>
+          <li>Use immutable cache-control headers for fingerprinted assets.</li>
+          <li>Pre-render static HTML so users never wait on client JavaScript rendering.</li>
+        </ul>
+      </div>
+      <div class="text-sm text-stone-700 dark:text-stone-300 leading-relaxed space-y-4">
+        <p>Users judge website speed in milliseconds. A 200ms delay is imperceptible; a 2-second delay drives 40% of visitors away. This is why performance isn't something I bolt on at the end.</p>
+        <p>My stack: plain HTML + Tailwind CDN (only what's used), no SSR framework, no heavy client bundles. Deployed to Cloudflare Pages with edge distribution across 300+ locations.</p>
+        <p>Critical techniques: inline critical CSS, preconnect to font origins, use <code class="font-mono bg-stone-100 dark:bg-stone-800 px-1 rounded">loading="lazy"</code> on all below-fold images, and set <code class="font-mono bg-stone-100 dark:bg-stone-800 px-1 rounded">Cache-Control: public, max-age=31536000, immutable</code> on fingerprinted assets. The result: consistent 100/100 across all four Lighthouse categories.</p>
+      </div>
+    </template>
 
   </main>
 
