@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Romit — Builder, Learner & Web Utility Maker</title>
+  <meta name="description" content="Personal website of Romit. Building independent web utilities, documenting technical SEO discoveries, sharing builder experiences, and learning in public." />
+  <meta name="author" content="Romit" />
+
+  <link rel="canonical" href="https://romityadav.com/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Romit — Builder, Learner & Web Utility Maker" />
+  <meta property="og:description" content="Personal website of Romit. Building independent web utilities, documenting technical SEO discoveries, and learning in public." />
+  <meta property="og:url" content="https://romityadav.com/index.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Anti-flash: apply dark class synchronously before any paint -->
+  <script>
+    (function(){
+      var s = localStorage.getItem('romit_theme');
+      var dark = s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (dark) document.documentElement.classList.add('dark');
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['Newsreader', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Romit",
+    "jobTitle": "Web Builder & Technical SEO Enthusiast",
+    "url": "https://romityadav.com",
+    "sameAs": [
+      "https://github.com/romityadav",
+      "https://twitter.com/romityadav",
+      "https://linkedin.com/in/romityadav"
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-[#faf9f6] dark:bg-[#0c0c0e] text-stone-800 dark:text-stone-200 min-h-screen flex flex-col font-sans transition-colors duration-200">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full border-b border-stone-200/80 dark:border-stone-800/80 bg-[#faf9f6]/85 dark:bg-[#0c0c0e]/85 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-xl bg-stone-900 dark:bg-white text-white dark:text-stone-900 flex items-center justify-center font-bold text-sm shadow-xs group-hover:scale-105 transition-transform duration-200">
+          R
+        </div>
+        <div class="flex flex-col">
+          <span class="text-sm font-bold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">Romit</span>
+          <span class="text-[10px] font-mono text-stone-500 dark:text-stone-400">builder & learner</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-1 p-1 rounded-2xl bg-stone-100/80 dark:bg-stone-900/80 border border-stone-200/60 dark:border-stone-800/60">
+        <a href="index.html"       class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-stone-800 text-stone-900 dark:text-white shadow-xs transition-all">Home</a>
+        <a href="about.html"       class="px-3 py-1.5 rounded-xl text-xs font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-stone-800/60 transition-all">About</a>
+        <a href="projects.html"    class="px-3 py-1.5 rounded-xl text-xs font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-stone-800/60 transition-all">Projects & Tools</a>
+        <a href="experiences.html" class="px-3 py-1.5 rounded-xl text-xs font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-stone-800/60 transition-all">Experiences & Journal</a>
+        <a href="gallery.html"     class="px-3 py-1.5 rounded-xl text-xs font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-stone-800/60 transition-all">Photo Gallery</a>
+        <a href="contact.html"     class="px-3 py-1.5 rounded-xl text-xs font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-stone-800/60 transition-all">Contact</a>
+      </nav>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle" class="p-2 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition-all duration-200 shadow-2xs" aria-label="Toggle Dark Mode">
+          <i data-lucide="sun"  class="w-4 h-4 hidden dark:block"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+        </button>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] text-stone-600 dark:text-stone-300 transition-all" aria-label="Open Menu">
+          <i data-lucide="menu" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 border-b border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] space-y-1">
+      <a href="index.html"       class="block px-3 py-2 rounded-xl text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/30">Home</a>
+      <a href="about.html"       class="block px-3 py-2 rounded-xl text-xs font-semibold text-stone-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">About</a>
+      <a href="projects.html"    class="block px-3 py-2 rounded-xl text-xs font-semibold text-stone-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">Projects & Tools</a>
+      <a href="experiences.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-stone-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">Experiences & Journal</a>
+      <a href="gallery.html"     class="block px-3 py-2 rounded-xl text-xs font-semibold text-stone-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">Photo Gallery</a>
+      <a href="contact.html"     class="block px-3 py-2 rounded-xl text-xs font-semibold text-stone-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="page-view flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 pt-6 pb-16 space-y-16">
+
+    <!-- Hero Section -->
+    <section class="relative pt-6 sm:pt-10 pb-4">
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+        <!-- Left: Text Content -->
+        <div class="flex-1 space-y-6">
+
+          <!-- Availability badge -->
+          <div class="hero-line float-badge inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 text-xs font-medium shadow-2xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-ring"></span>
+            <span>Available for collaborations & web projects</span>
+          </div>
+
+          <h1 class="hero-line text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 dark:text-stone-50 leading-[1.1]">
+            Hi, I'm <span class="underline decoration-emerald-500/40 decoration-4 underline-offset-4">Romit</span>.<br />
+            I build things, learn in public, and document the journey.
+          </h1>
+
+          <p class="hero-line text-base sm:text-lg text-stone-600 dark:text-stone-300 leading-relaxed font-serif">
+            Welcome to my personal corner on the internet. I craft independent web utilities, share technical SEO discoveries, analyze coding experiments, and share real stories from building on the open web.
+          </p>
+
+          <div class="hero-line flex flex-wrap items-center gap-3 pt-2">
+            <a href="projects.html" class="btn-ripple inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 font-semibold text-xs shadow-sm hover:opacity-90 transition-opacity">
+              <span>Explore My Tools & Projects</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+            <a href="about.html" class="btn-ripple inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-stone-300 dark:border-stone-700 bg-white dark:bg-[#141417] text-stone-700 dark:text-stone-200 font-semibold text-xs shadow-2xs hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors">
+              <span>About My Journey</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Profile Card -->
+        <div class="hero-line flex-shrink-0 w-64 sm:w-72">
+          <div class="relative rounded-3xl overflow-hidden border border-stone-200 dark:border-stone-700/60 shadow-2xl bg-gradient-to-b from-stone-800 to-stone-950 dark:from-[#1a1a2e] dark:to-[#0c0c0e]">
+
+            <!-- Photo area -->
+            <div class="relative aspect-[3/4] overflow-hidden">
+              <!-- Replace the src below with your own photo path, e.g. src="assets/romit.jpg" -->
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80"
+                alt="Romit — Web Builder & SEO Learner"
+                class="w-full h-full object-cover object-top"
+              />
+              <!-- Gradient overlay at bottom -->
+              <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/20 to-transparent"></div>
+
+              <!-- [YOUR PHOTO] placeholder badge — remove once you add your real photo -->
+              <span class="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[9px] font-mono font-bold bg-white/10 text-white/60 border border-white/10 backdrop-blur-sm select-none">
+                [YOUR PHOTO]
+              </span>
+
+              <!-- Name & title overlay -->
+              <div class="absolute bottom-0 left-0 right-0 p-4 space-y-0.5">
+                <p class="text-sm font-bold text-white leading-tight">Romit</p>
+                <p class="text-[11px] text-stone-300">Web Builder & SEO Learner</p>
+              </div>
+            </div>
+
+            <!-- Quote strip -->
+            <div class="px-4 py-3 bg-stone-900/80 dark:bg-[#0f0f14]">
+              <p class="text-[11px] text-stone-400 font-serif italic text-center leading-relaxed">
+                "Turning small ideas into lightweight, discoverable web tools."
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What I'm Building Now -->
+    <section class="reveal p-6 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] shadow-2xs space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+          <h2 class="text-sm font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">What I'm Building & Focusing on Now</h2>
+        </div>
+        <span class="text-xs font-mono text-stone-400">August 2026</span>
+      </div>
+      <div class="stagger-children grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+        <div class="p-4 rounded-2xl bg-stone-50 dark:bg-[#18181c] border border-stone-100 dark:border-stone-800/80 space-y-1.5 transition-all hover:border-emerald-500/30 hover:shadow-sm">
+          <p class="font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-500"></i>
+            SEO Crawl & Metadata Audit
+          </p>
+          <p class="text-stone-500 dark:text-stone-400 leading-relaxed">Developing an open client-side analyzer for structured schema, canonical headers, and social tags.</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-stone-50 dark:bg-[#18181c] border border-stone-100 dark:border-stone-800/80 space-y-1.5 transition-all hover:border-indigo-500/30 hover:shadow-sm">
+          <p class="font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+            <i data-lucide="book-open" class="w-3.5 h-3.5 text-indigo-500"></i>
+            Writing in Public
+          </p>
+          <p class="text-stone-500 dark:text-stone-400 leading-relaxed">Publishing essays and post-mortems on why 3 of my early micro-tools didn't gain traction and what they taught me.</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-stone-50 dark:bg-[#18181c] border border-stone-100 dark:border-stone-800/80 space-y-1.5 transition-all hover:border-amber-500/30 hover:shadow-sm">
+          <p class="font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+            <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500"></i>
+            Ultra-Fast Static Stacks
+          </p>
+          <p class="text-stone-500 dark:text-stone-400 leading-relaxed">Pushing edge CDN deployments on Cloudflare with zero runtime bloat and 100/100 Lighthouse performance scores.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="space-y-6">
+      <div class="reveal flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100">Featured Web Tools</h2>
+          <p class="text-xs text-stone-500 dark:text-stone-400">Utilities built to solve real developer and SEO bottlenecks</p>
+        </div>
+        <a href="projects.html" class="link-underline text-xs font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1 hover:gap-2 transition-all">
+          <span>View All Projects</span>
+          <i data-lucide="arrow-right" class="w-3 h-3"></i>
+        </a>
+      </div>
+      <div id="home-featured-projects" class="stagger-children grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Recent Experiences -->
+    <section class="space-y-6">
+      <div class="reveal flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100">Recent Stories & Insights</h2>
+          <p class="text-xs text-stone-500 dark:text-stone-400">Field notes on coding, SEO, experiments, and lessons</p>
+        </div>
+        <a href="experiences.html" class="link-underline text-xs font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1 hover:gap-2 transition-all">
+          <span>Read All Entries</span>
+          <i data-lucide="arrow-right" class="w-3 h-3"></i>
+        </a>
+      </div>
+      <div id="home-recent-experiences" class="stagger-children grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-stone-200 dark:border-stone-800 bg-white dark:bg-[#141417] py-8 text-xs text-stone-500 dark:text-stone-400">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Romit. Built with passion & clean web craft.</p>
+      <div class="flex items-center gap-4">
+        <a href="index.html"       class="link-underline hover:text-stone-900 dark:hover:text-white transition-colors">Home</a>
+        <a href="about.html"       class="link-underline hover:text-stone-900 dark:hover:text-white transition-colors">About</a>
+        <a href="projects.html"    class="link-underline hover:text-stone-900 dark:hover:text-white transition-colors">Projects</a>
+        <a href="experiences.html" class="link-underline hover:text-stone-900 dark:hover:text-white transition-colors">Journal</a>
+        <a href="gallery.html"     class="link-underline hover:text-stone-900 dark:hover:text-white transition-colors">Gallery</a>
+        <a href="contact.html"     class="link-underline hover:text-stone-900 dark:hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm items-center justify-center p-4">
+    <div data-modal-box class="relative w-full max-w-2xl bg-white dark:bg-[#141417] rounded-3xl border border-stone-200 dark:border-stone-800 p-6 sm:p-8 space-y-4 max-h-[90vh] overflow-y-auto">
+      <button id="close-project-modal" class="absolute top-4 right-4 p-2 rounded-lg text-stone-400 hover:text-stone-900 dark:hover:text-white transition-colors hover:bg-stone-100 dark:hover:bg-stone-800" aria-label="Close Modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="modal-project-content" class="space-y-4 text-xs"></div>
+    </div>
+  </div>
+
+  <!-- Article Modal -->
+  <div id="article-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm items-center justify-center p-4">
+    <div data-modal-box class="relative w-full max-w-3xl bg-white dark:bg-[#141417] rounded-3xl border border-stone-200 dark:border-stone-800 p-6 sm:p-10 space-y-6 max-h-[92vh] overflow-y-auto">
+      <button id="close-article-modal" class="absolute top-5 right-5 p-2 rounded-lg text-stone-400 hover:text-stone-900 dark:hover:text-white transition-colors hover:bg-stone-100 dark:hover:bg-stone-800" aria-label="Close Article">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="modal-article-content" class="space-y-4"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

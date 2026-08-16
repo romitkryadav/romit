@@ -1,0 +1,401 @@
+/* ==========================================================================
+   Base & Typography
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(150, 150, 150, 0.5); }
+
+/* Selection */
+::selection { background-color: rgba(16,185,129,0.18); color: #065f46; }
+.dark ::selection { background-color: rgba(16,185,129,0.28); color: #6ee7b7; }
+
+/* ==========================================================================
+   Cursor Glow
+   ========================================================================== */
+
+.cursor-glow {
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(16,185,129,0.07) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: opacity 0.4s ease;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   Scroll-Reveal System
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-left {
+  transform: translateX(-28px);
+}
+
+.reveal.reveal-right {
+  transform: translateX(28px);
+}
+
+.reveal.reveal-scale {
+  transform: scale(0.94);
+  opacity: 0;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays for child elements */
+.stagger-children > * { opacity: 0; transform: translateY(22px); }
+.stagger-children > *.in-view {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.stagger-children > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-children > *:nth-child(2) { transition-delay: 80ms; }
+.stagger-children > *:nth-child(3) { transition-delay: 160ms; }
+.stagger-children > *:nth-child(4) { transition-delay: 240ms; }
+.stagger-children > *:nth-child(5) { transition-delay: 320ms; }
+.stagger-children > *:nth-child(6) { transition-delay: 400ms; }
+
+/* ==========================================================================
+   Page Entry Animation
+   ========================================================================== */
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-view {
+  animation: pageEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ==========================================================================
+   Hero Text Reveal
+   ========================================================================== */
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-line {
+  opacity: 0;
+  animation: heroFadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-line:nth-child(1) { animation-delay: 0.05s; }
+.hero-line:nth-child(2) { animation-delay: 0.18s; }
+.hero-line:nth-child(3) { animation-delay: 0.30s; }
+.hero-line:nth-child(4) { animation-delay: 0.42s; }
+.hero-line:nth-child(5) { animation-delay: 0.54s; }
+
+/* ==========================================================================
+   Nav Scroll Shrink
+   ========================================================================== */
+
+header {
+  transition: box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+header.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* ==========================================================================
+   Card & Hover Lift
+   ========================================================================== */
+
+.card-lift {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.2s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+}
+
+.dark .card-lift:hover {
+  box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+}
+
+/* ==========================================================================
+   Button Ripple
+   ========================================================================== */
+
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.btn-ripple:active { transform: scale(0.96); }
+
+.btn-ripple .ripple-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(0);
+  animation: ripple 0.55s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ==========================================================================
+   Modal Animations
+   ========================================================================== */
+
+@keyframes modalBackdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes modalBackdropOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes modalSlideDown {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(16px) scale(0.97); }
+}
+
+.modal-backdrop {
+  animation: modalBackdropIn 0.25s ease forwards;
+}
+
+.modal-backdrop.closing {
+  animation: modalBackdropOut 0.22s ease forwards;
+}
+
+.modal-box {
+  animation: modalSlideUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.modal-box.closing {
+  animation: modalSlideDown 0.22s ease forwards;
+}
+
+/* ==========================================================================
+   Mobile Menu Slide
+   ========================================================================== */
+
+@keyframes menuSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#mobile-menu:not(.hidden) {
+  animation: menuSlideDown 0.22s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ==========================================================================
+   Image Zoom on Hover
+   ========================================================================== */
+
+.img-zoom img {
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.img-zoom:hover img { transform: scale(1.06); }
+
+/* ==========================================================================
+   Tag / Badge Bounce In
+   ========================================================================== */
+
+@keyframes badgeIn {
+  0%   { opacity: 0; transform: scale(0.7); }
+  70%  { transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.badge-in {
+  animation: badgeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ==========================================================================
+   Pulse Ring (status indicator)
+   ========================================================================== */
+
+@keyframes pingRing {
+  75%, 100% { transform: scale(1.8); opacity: 0; }
+}
+
+.pulse-ring {
+  animation: pingRing 1.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* ==========================================================================
+   Skeleton Loading Shimmer
+   ========================================================================== */
+
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to   { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg,
+    rgba(200,200,200,0.15) 25%,
+    rgba(200,200,200,0.30) 50%,
+    rgba(200,200,200,0.15) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   Underline Hover Slide (nav links / text links)
+   ========================================================================== */
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 0; height: 1.5px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: width 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-underline:hover::after { width: 100%; }
+
+/* ==========================================================================
+   Active Nav State
+   ========================================================================== */
+
+.nav-link.active {
+  background-color: #ffffff;
+  color: #111827;
+  font-weight: 600;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+}
+
+.dark .nav-link.active {
+  background-color: #27272a;
+  color: #ffffff;
+}
+
+.mobile-nav-link.active {
+  background-color: rgba(16,185,129,0.1);
+  color: #059669;
+}
+
+.dark .mobile-nav-link.active { color: #34d399; }
+
+/* ==========================================================================
+   Form Focus Glow
+   ========================================================================== */
+
+input, textarea {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+/* ==========================================================================
+   Section Divider Fade
+   ========================================================================== */
+
+.section-divider {
+  opacity: 0;
+  animation: heroFadeUp 0.5s ease 0.1s forwards;
+}
+
+/* ==========================================================================
+   Floating Badge (availability pill)
+   ========================================================================== */
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-4px); }
+}
+
+.float-badge {
+  animation: floatBadge 3s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Scroll Progress Bar
+   ========================================================================== */
+
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ==========================================================================
+   Footer Fade Up
+   ========================================================================== */
+
+footer {
+  opacity: 0;
+  animation: heroFadeUp 0.6s ease 0.3s forwards;
+}
