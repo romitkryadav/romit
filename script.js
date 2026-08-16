@@ -9,8 +9,8 @@
 const projectsData = [
   {
     id: 'metatag-lens',
-    title: 'MetaTagLens',
-    tagline: 'Instant OpenGraph & SERP Social Snippet Visualizer',
+    title: 'ThreadsGrab ',
+    tagline: 'Threads Downloader & Follower Counter',
     description: 'A developer & SEO utility that fetches live meta tags, OpenGraph images, and Twitter Cards to preview how URLs look on Google, X, Facebook, and LinkedIn.',
     problemSolved: 'Eliminates guesswork before publishing articles by showing instant pixel-accurate SERP previews and OpenGraph rendering warnings.',
     category: 'seo-utility',
@@ -18,7 +18,7 @@ const projectsData = [
     status: 'live',
     date: '2026',
     techStack: ['TypeScript', 'Vite', 'Tailwind CSS', 'DOMParser'],
-    screenshot: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80',
+    screenshot: 'https://romitkryadav.fbviddl.com/projects/threadsgrab-project.png',
     demoUrl: 'https://github.com/romityadav',
     githubUrl: 'https://github.com/romityadav',
   },
@@ -116,6 +116,13 @@ const experiencesData = [
     content: `Users judge website speed in milliseconds. By keeping bundles lightweight and deploying to edge servers on Cloudflare Pages, pages load instantly across mobile and desktop connections.`
   }
 ];
+
+
+
+// galleryData is a curated set of images for the gallery section, each with an ID, title, caption, URL, and date.
+
+
+
 
 const galleryData = [
   {
